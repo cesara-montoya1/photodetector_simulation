@@ -1,6 +1,6 @@
 import numpy as np
 from pint import Quantity
-from constants import KB, H_PLANCK, H_BAR, Q_E, M_E, EPSILON_0
+from constants import KB, H_PLANCK, H_BAR, Q_E, EPSILON_0
 from materials_data import SEMICONDUCTOR_MATERIALS
 from constants import u
 
@@ -36,6 +36,7 @@ class Semiconductor:
         self.static_dielectric_constant = self.data["static_dielectric_constant"]
         self.high_freq_dielectric_constant = self.data["high_freq_dielectric_constant"]
         self.LO_phonon_energy = self.data["LO_phonon_energy"]
+        self.absorption_coefficient = self.data["absorption_coefficient"]
 
     @u.wraps(u.eV, None)
     def band_gap(self) -> Quantity:
