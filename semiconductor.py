@@ -37,6 +37,8 @@ class Semiconductor:
         self.high_freq_dielectric_constant = self.data["high_freq_dielectric_constant"]
         self.LO_phonon_energy = self.data["LO_phonon_energy"]
         self.absorption_coefficient = self.data["absorption_coefficient"]
+        self.electron_lifetime = self.data["electron_lifetime"]
+        self.hole_lifetime = self.data["hole_lifetime"]
 
     @u.wraps(u.eV, None)
     def band_gap(self) -> Quantity:
@@ -197,16 +199,15 @@ class Semiconductor:
             N_i = (self.N_A + self.N_D).magnitude
             if N_i != 0:
                 mu_imp = self.impurities_mobility(m_star)
-                inverse_terms.append(1/mu_imp)
+                inverse_terms.append(1 / mu_imp)
             if self.is_polar:
                 mu_pop = self.optical_phonons_polar_mobility(m_star)
-                inverse_terms.append(1/mu_pop)
+                inverse_terms.append(1 / mu_pop)
             else:
                 mu_intervalley = self.acoustic_phonons_intervalley_mobility(m_star)
                 mu_intravalley = self.acoustic_phonons_intravalley_mobility(m_star)
-                inverse_terms.append(1/mu_intervalley)
-                inverse_terms.append(1/mu_intravalley)
-            print(inverse_terms)
+                inverse_terms.append(1 / mu_intervalley)
+                inverse_terms.append(1 / mu_intravalley)
             mu_total = 1 / sum(inverse_terms)
             mus.append(mu_total)
 

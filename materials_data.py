@@ -23,7 +23,7 @@ SILICON_DATA = {
     "num_equivalent_valleys": 6,  # Para el Silicio (valle X)
     "is_polar": False,  # El Silicio es un semiconductor no polar
     # Tomado de https://www.pveducation.org/pvcdrom/materials/optical-properties-of-silicon
-    "absorption_coefficient_data": {
+    "absorption_coefficient": {
         300: 1.73e6 * u.cm**-1,
         400: 9.52e4 * u.cm**-1,
         500: 1.11e4 * u.cm**-1,
@@ -62,7 +62,7 @@ GERMANIUM_DATA = {
     "num_equivalent_valleys": 4,  # Para el Germanio (valle L)
     "is_polar": False,
     # Aproximado de https://www.ioffe.ru/SVA/NSM/Semicond/Ge/optic.html
-    "absorption_coefficient_data": {
+    "absorption_coefficient": {
         300: 9.0e5 * u.cm**-1,
         400: 2.0e5 * u.cm**-1,
         500: 6.8e4 * u.cm**-1,
@@ -101,7 +101,7 @@ GALLIUM_ARSENIDE_DATA = {
     "num_equivalent_valleys": 1,  # Para el GaAs (valle Gamma)
     "is_polar": True,  # El GaAs es un semiconductor polar
     # Aproximado de https://www.ioffe.ru/SVA/NSM/Semicond/GaAs/optic.html
-    "absorption_coefficient_data": {
+    "absorption_coefficient": {
         300: 1.2e6 * u.cm**-1,
         400: 0.7e6 * u.cm**-1,
         500: 0.5e6 * u.cm**-1,
